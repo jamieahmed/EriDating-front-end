@@ -1,18 +1,17 @@
+import React from "react";
 import styled from "styled-components";
+import Card from "../../../components/MainPages/Card";
 import { useState, useEffect } from "react";
 import * as profileService from "../../../services/profileService";
 
 const Container = styled.div`
-  font-size: medium;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
 `;
-const MembersCard = styled.div`
-  height: 350px;
-  width: 200px;
-  background-color: #f80039;
-  margin: auto 20px;
-`;
+
 const Members = () => {
   const [profiles, setProfiles] = useState([]);
 
@@ -23,21 +22,12 @@ const Members = () => {
     };
     fetchProfiles();
   }, []);
-
   return (
-    <>
-      {profiles.length ? (
-        <Container>
-          {profiles.map((profile) => (
-            <MembersCard key={profile._id} className="memebers-card">
-              {profile.name}
-            </MembersCard>
-          ))}
-        </Container>
-      ) : (
-        <p>No profiles yet</p>
-      )}
-    </>
+    <Container>
+      {profiles.map((profile) => (
+        <Card key={profile._id} profile={profile} />
+      ))}
+    </Container>
   );
 };
 

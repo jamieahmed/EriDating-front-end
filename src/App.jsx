@@ -3,10 +3,10 @@ import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Landing from "./pages/Landing/Landing/Landing";
-// import Members from "./pages/Landing/MainPages/Members";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import * as authService from "./services/authService";
 import Navbar from "./pages/Navbar/Navbar";
+import MemberDetails from "./pages/Landing/MainPages/MemberDetails";
 import Matches from "./pages/Landing/MainPages/Matches";
 import Search from "./pages/Landing/MainPages/Search";
 import Message from "./pages/Landing/MainPages/Message";
@@ -33,6 +33,9 @@ const App = () => {
       <Navbar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="member">
+          <Route path=":id" element={<MemberDetails />} />
+        </Route>
         <Route path="/Matches" element={<Matches user={user} />} />
         <Route path="/Search" element={<Search user={user} />} />
         <Route path="/Message" element={<Message user={user} />} />
@@ -48,7 +51,7 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/changePassword"
+          path="/Settings/changePassword"
           element={
             user ? (
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />

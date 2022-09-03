@@ -5,7 +5,9 @@ const Settings = () => {
   return (
     <div>
       <strong>
-        <Link to="/Settings/changePassword">Change Password</Link>
+        <Link to="/Settings/changePassword" style={{ textDecoration: "none" }}>
+          Change Password
+        </Link>
       </strong>
     </div>
   );
