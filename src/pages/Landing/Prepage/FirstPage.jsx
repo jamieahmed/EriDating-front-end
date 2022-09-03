@@ -1,8 +1,7 @@
 import React from "react";
-import "./Landing.css";
+import "../Landing/Landing.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Brightness4OutlinedIcon from "@mui/icons-material/Brightness4Outlined";
 
 const BgImage =
   "https://www.nsbpictures.com/wp-content/uploads/2019/03/fire-heart.jpg";
@@ -26,43 +25,6 @@ const GeneralContainer = styled.div`
   padding: 10px;
 `;
 
-const NavbarContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 20px auto;
-  width: 100%;
-`;
-
-const Logo = styled.div`
-  height: 30px;
-  width: 70px;
-  position: absolute;
-  top: 8px;
-  left: 26px;
-`;
-
-const SignIn = styled.div`
-  height: 30px;
-  width: 70px;
-  position: absolute;
-  top: 8px;
-  right: 156px;
-`;
-
-const Language = styled.div`
-  height: 30px;
-  width: 70px;
-  position: absolute;
-  top: 8px;
-  right: 86px;
-`;
-const DarkMode = styled.span`
-  height: 30px;
-  width: 70px;
-  position: absolute;
-  top: 8px;
-  right: 0px;
-`;
 const HomeContainer = styled.div`
   margin: 10px auto;
   width: 100%;
@@ -256,18 +218,6 @@ const FirstPage = () => {
   return (
     <>
       <GeneralContainer>
-        <NavbarContainer>
-          <Logo>EriDating</Logo>
-          <SignIn>
-            <Link className="login-link" to="/login">
-              Log In
-            </Link>
-          </SignIn>
-          <Language>Language</Language>
-          <DarkMode>
-            <Brightness4OutlinedIcon />
-          </DarkMode>
-        </NavbarContainer>
         <HomeContainer>
           <HomeImage src={BgImage} />
           <HomeTitle>Meet Eritrean Singles</HomeTitle>

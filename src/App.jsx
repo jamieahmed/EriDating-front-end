@@ -2,10 +2,17 @@ import { useState } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
-import Landing from "./pages/Landing/Landing";
-import Profiles from "./pages/Profiles/Profiles";
+import Landing from "./pages/Landing/Landing/Landing";
+// import Members from "./pages/Landing/MainPages/Members";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import * as authService from "./services/authService";
+import Navbar from "./pages/Navbar/Navbar";
+import Matches from "./pages/Landing/MainPages/Matches";
+import Search from "./pages/Landing/MainPages/Search";
+import Message from "./pages/Landing/MainPages/Message";
+import Activity from "./pages/Landing/MainPages/Activity";
+import Account from "./pages/Landing/MainPages/Account";
+import Settings from "./pages/Landing/MainPages/Settings";
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
@@ -23,29 +30,23 @@ const App = () => {
 
   return (
     <>
-      {/* landing page */}
+      <Navbar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route
-          path="/"
-          element={<Landing user={user} handleLogout={handleLogout} />}
-        />
-        {/* singup */}
+        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/Matches" element={<Matches user={user} />} />
+        <Route path="/Search" element={<Search user={user} />} />
+        <Route path="/Message" element={<Message user={user} />} />
+        <Route path="/Activity" element={<Activity user={user} />} />
+        <Route path="/Account" element={<Account user={user} />} />
+        <Route path="/Settings" element={<Settings user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
-        {/* login */}
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
-        {/* profiles */}
-        <Route
-          path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
-        />
-
-        {/* change password */}
         <Route
           path="/changePassword"
           element={

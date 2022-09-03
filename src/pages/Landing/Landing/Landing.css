@@ -1,0 +1,23 @@
+.login-link {
+    text-decoration: none;
+    color: black;
+}
+
+.howWorksCardLink {
+    text-decoration: none;
+    color: black;
+
+}
+
+.NavLinks {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+    margin: auto 10px;
+    ;
+}
+
+#fadebutton{
+    text-decoration: none;
+    background-color: transparent;
+}
