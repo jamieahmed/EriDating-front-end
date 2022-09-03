@@ -70,54 +70,50 @@ const Card = () => {
 
   return (
     <>
-      {profiles.length ? (
-        <Container>
-          {profiles.map((profile) => (
-            <MembersCard key={profile._id} className="memebers-card">
-              <MembersCardDetails>
-                <Link to="/member/:id" style={{ textDecoration: "none" }}>
-                  <MembersCardImage src={MembersCardImageSrc} />
-                  <MembersCardText>
-                    <strong>Name:</strong>
-                    {profile.name}
-                  </MembersCardText>
-                  <br />
-                  <MembersCardText>
-                    <strong>Lives In:</strong>Westfield,NJ,USA
-                  </MembersCardText>
-                  <br />
-                  <MembersCardText>
-                    <strong>Age:</strong>26
-                  </MembersCardText>
-                  <br />
-                  <MembersCardText>
-                    <strong>Seeking:</strong>Male 21 - 34
-                  </MembersCardText>
-                  <br />
-                  <MembersCardText>
-                    <strong>Status:</strong>19 hours ago
-                  </MembersCardText>
-                  <br />
-                </Link>
-                <Hr />
-                <MembersCardFooter>
-                  <MembersCardFooterButton>
-                    <FavoriteBorderOutlinedIcon />
-                  </MembersCardFooterButton>
-                  <MembersCardFooterButton>
-                    <MessageIcon />
-                  </MembersCardFooterButton>
-                  <MembersCardFooterButton>
-                    <VisibilityOutlinedIcon />
-                  </MembersCardFooterButton>
-                </MembersCardFooter>
-              </MembersCardDetails>
-            </MembersCard>
-          ))}
-        </Container>
-      ) : (
-        <p>No profiles yet</p>
-      )}
+      <Container>
+        {profiles.map((profile) => (
+          <MembersCard key={profile._id} className="memebers-card">
+            <MembersCardDetails>
+              <Link to="/member/:id" style={{ textDecoration: "none" }}>
+                <MembersCardImage src={MembersCardImageSrc} />
+                <MembersCardText>
+                  <strong>Name:</strong>
+                  {profile.name}
+                </MembersCardText>
+                <br />
+                <MembersCardText>
+                  <strong>Lives In:</strong>Westfield,NJ,USA
+                </MembersCardText>
+                <br />
+                <MembersCardText>
+                  <strong>Age:</strong>26
+                </MembersCardText>
+                <br />
+                <MembersCardText>
+                  <strong>Seeking:</strong>Male 21 - 34
+                </MembersCardText>
+                <br />
+                <MembersCardText>
+                  <strong>Status:</strong>19 hours ago
+                </MembersCardText>
+                <br />
+              </Link>
+              <Hr />
+              <MembersCardFooter>
+                <MembersCardFooterButton>
+                  <FavoriteBorderOutlinedIcon />
+                </MembersCardFooterButton>
+                <MembersCardFooterButton>
+                  <MessageIcon />
+                </MembersCardFooterButton>
+                <MembersCardFooterButton>
+                  <VisibilityOutlinedIcon />
+                </MembersCardFooterButton>
+              </MembersCardFooter>
+            </MembersCardDetails>
+          </MembersCard>
+        ))}
+      </Container>
     </>
   );
 };

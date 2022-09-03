@@ -23,11 +23,17 @@ const Members = () => {
     fetchProfiles();
   }, []);
   return (
-    <Container>
-      {profiles.map((profile) => (
-        <Card key={profile._id} profile={profile} />
-      ))}
-    </Container>
+    <>
+      {profiles.length ? (
+        <Container>
+          {profiles.map((profile) => (
+            <Card key={profile._id} profile={profile} />
+          ))}
+        </Container>
+      ) : (
+        <p>No profiles yet</p>
+      )}
+    </>
   );
 };
 

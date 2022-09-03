@@ -121,7 +121,7 @@ const Landing = ({ user, handleLogout }) => {
                   TransitionComponent={Fade}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link className="NavLinks" to="/Account">
+                    <Link className="NavLinks" to="/My-Account">
                       My account
                     </Link>
                   </MenuItem>

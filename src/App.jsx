@@ -40,7 +40,7 @@ const App = () => {
         <Route path="/Search" element={<Search user={user} />} />
         <Route path="/Message" element={<Message user={user} />} />
         <Route path="/Activity" element={<Activity user={user} />} />
-        <Route path="/Account" element={<Account user={user} />} />
+        <Route path="/My-Account" element={<Account user={user} />} />
         <Route path="/Settings" element={<Settings user={user} />} />
         <Route
           path="/signup"
@@ -51,7 +51,7 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/Settings/changePassword"
+          path="/Settings/accountmanagement/changePassword"
           element={
             user ? (
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
