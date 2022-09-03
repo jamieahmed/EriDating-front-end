@@ -9,11 +9,11 @@ const GeneralContainer = styled.div`
   overflow-y: auto;
   position: relative;
   padding: 10px;
+
 `;
 const HomeContainer = styled.div`
   margin: 10px auto;
   width: 100%;
-  position: relative;
 `;
 const SecondPage = () => {
   return (

@@ -4,11 +4,14 @@ import * as profileService from "../../../services/profileService";
 
 const Container = styled.div`
   font-size: medium;
+  display: flex;
+  flex-direction: row;
 `;
 const MembersCard = styled.div`
   height: 350px;
   width: 200px;
-  background-color: gray;
+  background-color: #f80039;
+  margin: auto 20px;
 `;
 const Members = () => {
   const [profiles, setProfiles] = useState([]);
