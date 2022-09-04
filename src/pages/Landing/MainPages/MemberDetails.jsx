@@ -13,13 +13,15 @@ const GeneralContainer = styled.div`
 const Container = styled.div`
   display: flex;
   background-color: #f3e6e8;
-  gap: 10px;
+  gap: 3px;
   margin: 10px;
 `;
 
 const PhotoContainer = styled.div`
+  margin: 10px auto;
+  border-top: 3px solid white;
   padding: 20px;
-  flex: 3;
+  flex: 2.5;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
@@ -27,8 +29,10 @@ const PhotoContainer = styled.div`
     5px 5px 15px 5px rgba(255, 255, 255, 0);
 `;
 const OverviewContainer = styled.div`
+  margin: 10px auto;
+  border-top: 3px solid white;
   padding: 20px;
-  flex: 4;
+  flex: 4.5;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
