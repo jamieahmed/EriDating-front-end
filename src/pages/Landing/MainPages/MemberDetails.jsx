@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import MemberProfileDetails from "../../../components/MainPages/MemberProfileOverviewDetails";
+import MemberProfileAllDetails from "../../../components/MainPages/MemberProfileAllDetails";
 import Recommendation from "../../../components/MainPages/Recommendation";
+import MemberProfileImages from "../../../components/MainPages/MemberProfileImages";
 
 const GeneralContainer = styled.div`
   width: 80%;
@@ -21,18 +24,19 @@ const PhotoContainer = styled.div`
   margin: 10px auto;
   border-top: 3px solid white;
   padding: 20px;
-  flex: 2.5;
+  flex: 2;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
   box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
 `;
+
 const OverviewContainer = styled.div`
   margin: 10px auto;
   border-top: 3px solid white;
   padding: 20px;
-  flex: 4.5;
+  flex: 5;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
@@ -71,10 +75,16 @@ const MemberDetails = () => {
     <>
       <GeneralContainer>
         <Container>
-          <PhotoContainer>Photo</PhotoContainer>
-          <OverviewContainer>Overview</OverviewContainer>
+          <PhotoContainer>
+            <MemberProfileImages />
+          </PhotoContainer>
+          <OverviewContainer>
+            <MemberProfileDetails />
+          </OverviewContainer>
         </Container>
-        <MoreaboutmeContainer>More about me</MoreaboutmeContainer>
+        <MoreaboutmeContainer>
+          <MemberProfileAllDetails />
+        </MoreaboutmeContainer>
         <RecommendationContainer>
           <Recommendation />
         </RecommendationContainer>

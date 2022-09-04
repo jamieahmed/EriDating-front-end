@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const Recommendation = () => {
   return (
-    <>
-      <h5>Similar Members</h5>
-    </>
-  );
-};
+    <div>
+      Recommendation
+    </div>
+  )
+}
 
-export default Recommendation;
+export default Recommendation
