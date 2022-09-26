@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Recommendation from "../../../components/MainPages/Recommendation";
 
 const GeneralContainer = styled.div`
   width: 80%;
@@ -52,19 +52,6 @@ const MoreaboutmeContainer = styled.div`
   margin: 10px;
   border-top: 2px solid white;
 `;
-const RecommendationContainer = styled.div`
-  padding: 20px;
-  gap: 0px;
-  flex: 7;
-  height: 400px;
-  background-color: #f3e6e8;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  margin: 10px;
-  border-top: 2px solid white;
-`;
 
 const Account = ({ user }) => {
   return (
@@ -74,13 +61,12 @@ const Account = ({ user }) => {
         <Container>
           <PhotoContainer>Photo</PhotoContainer>
           <OverviewContainer>
-            <p>{user.name}</p>
+            <Link to="/my-account/add-profile-details">
+              Add profile details
+            </Link>
           </OverviewContainer>
         </Container>
         <MoreaboutmeContainer>More about me</MoreaboutmeContainer>
-        <RecommendationContainer>
-          <Recommendation />
-        </RecommendationContainer>
       </GeneralContainer>
     </>
   );

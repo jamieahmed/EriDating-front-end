@@ -1,12 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import MemberProfileImages from "../../../components/MainPages/MemberProfileImages";
-import MemberProfileDetails from "../../../components/MainPages/MemberProfileOverviewDetails";
-import MemberProfileAllDetails from "../../../components/MainPages/MemberProfileAllDetails";
-import Recommendation from "../../../components/MainPages/Recommendation";
 
 const GeneralContainer = styled.div`
-  width: 85%;
+  width: 80%;
   margin: 20px auto;
   background-color: #f3e6e8;
   -webkit-box-shadow: 5px 5px 15px 5px #ffffff;
@@ -24,26 +21,24 @@ const PhotoContainer = styled.div`
   margin: 10px auto;
   border-top: 3px solid white;
   padding: 20px;
-  flex: 2;
+  flex: 2.5;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
   box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
 `;
-
 const OverviewContainer = styled.div`
   margin: 10px auto;
   border-top: 3px solid white;
   padding: 20px;
-  flex: 5;
+  flex: 4.5;
   height: 400px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
   box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(255, 255, 255, 0);
 `;
-
 const MoreaboutmeContainer = styled.div`
   padding: 20px;
   gap: 0px;
@@ -58,42 +53,25 @@ const MoreaboutmeContainer = styled.div`
   border-top: 2px solid white;
 `;
 
-const RecommendationContainer = styled.div`
-  padding: 20px;
-  gap: 0px;
-  flex: 7;
-  height: 400px;
-  background-color: #f3e6e8;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(255, 255, 255, 0);
-  margin: 10px;
-  border-top: 2px solid white;
-`;
-
-const MemberDetails = ({ profiles }) => {
-  console.log(profiles);
+const AccountDetails = ({ profileDetail }) => {
   return (
     <>
       <GeneralContainer>
         <Container>
-          <PhotoContainer>
-            <MemberProfileImages />
-          </PhotoContainer>
+          <PhotoContainer>Photo</PhotoContainer>
           <OverviewContainer>
-            <MemberProfileDetails />
+            {profileDetail.age}
+            <div>
+              <Link to="/my-account/add-profile-details">
+                Add profile details
+              </Link>
+            </div>
           </OverviewContainer>
         </Container>
-        <MoreaboutmeContainer>
-          <MemberProfileAllDetails />
-        </MoreaboutmeContainer>
-        <RecommendationContainer>
-          <Recommendation />
-        </RecommendationContainer>
+        <MoreaboutmeContainer>More about me</MoreaboutmeContainer>
       </GeneralContainer>
     </>
   );
 };
 
-export default MemberDetails;
+export default AccountDetails;

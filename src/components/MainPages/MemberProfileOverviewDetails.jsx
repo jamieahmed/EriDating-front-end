@@ -4,6 +4,7 @@ import MessageIcon from "@mui/icons-material/Message";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FlagCircleIcon from "@mui/icons-material/FlagCircle";
 import BlockIcon from "@mui/icons-material/Block";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const CardContainer = styled.div`
   margin: 30px;
@@ -30,21 +31,21 @@ const MembersCardFooterButton = styled.button`
   text-align: center;
   margin: 10px;
 `;
+
 const MemberProfileDetails = () => {
   return (
-    <div>
+    <>
       <CardContainer>
         <MembersCardText>
           <strong style={{ color: "red" }}>Jamie's Basic Info</strong>
         </MembersCardText>
         <MembersCardText>
-          {" "}
           <strong style={{ marginLeft: "300px" }}>Status:</strong>19 hours ago
         </MembersCardText>
         <br />
         <MembersCardText>
           <strong>Name:</strong>
-          Jamie Ahmed
+         jamie
         </MembersCardText>
         <br />
         <MembersCardText>
@@ -104,9 +105,12 @@ const MemberProfileDetails = () => {
           <MembersCardFooterButton>
             <BlockIcon />
           </MembersCardFooterButton>
+          <MembersCardFooterButton>
+            <AccountCircleOutlinedIcon />
+          </MembersCardFooterButton>
         </MembersCardFooter>
       </CardContainer>
-    </div>
+    </>
   );
 };
 

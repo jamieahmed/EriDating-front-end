@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "@mui/material/Button";
@@ -15,7 +16,7 @@ const GeneralContainer = styled.div`
   margin: auto;
   overflow-y: auto;
   position: relative;
-  padding: 10px;
+  padding: 0px 10px;
 `;
 
 const NavbarContainer = styled.div`
@@ -25,6 +26,7 @@ const NavbarContainer = styled.div`
   width: 100%;
   justify-content: flex-end;
 `;
+
 const NavbarLinks = styled.div`
   height: 30px;
   width: 70px;
@@ -33,28 +35,50 @@ const NavbarLinks = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
 const Logo = styled.div`
   height: 30px;
   width: 70px;
   position: absolute;
   top: 8px;
   left: 26px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77, 0, 38, 0.5),
+    3px 0 3px #ff002b, 5px 0 3px #800015, 6px 2px 3px rgba(77, 0, 13, 0.5),
+    6px 0 9px #ff5500, 8px 0 9px #802a00, 9px 2px 9px rgba(77, 25, 0, 0.5),
+    9px 0 18px #ffd500, 11px 0 18px #806a00, 12px 2px 18px rgba(77, 66, 0, 0.5),
+    12px 0 30px #d4ff00, 14px 0 30px #6a8000, 15px 2px 30px rgba(64, 77, 0, 0.5),
+    15px 0 45px #80ff00, 17px 0 45px #408000, 17px 2px 45px rgba(38, 77, 0, 0.5);
 `;
 
 const SignIn = styled.div`
+  font-family: Georgia, serif;
+  font-weight: 700;
   height: 30px;
   width: 70px;
   position: absolute;
   top: 8px;
-  right: 156px;
+  right: 200px;
 `;
 
 const Language = styled.div`
+  font-family: Georgia, serif;
+  font-weight: 700;
   height: 30px;
   width: 70px;
   position: absolute;
   top: 8px;
-  right: 86px;
+  right: 100px;
+  color: white;
 `;
 const DarkMode = styled.span`
   height: 30px;
@@ -62,6 +86,7 @@ const DarkMode = styled.span`
   position: absolute;
   top: 8px;
   right: 0px;
+  color: white;
 `;
 
 const Landing = ({ user, handleLogout }) => {
@@ -121,12 +146,12 @@ const Landing = ({ user, handleLogout }) => {
                   TransitionComponent={Fade}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link className="NavLinks" to="/My-Account">
-                      My account
+                    <Link className="NavLinks" to="/Account">
+                      Account
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link className="NavLinks" to="Settings">
+                    <Link className="NavLinks" to="/Account/Settings">
                       Profile Settings
                     </Link>
                   </MenuItem>

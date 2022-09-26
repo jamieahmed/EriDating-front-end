@@ -1,10 +1,10 @@
 import React from "react";
-import "../Landing/Landing.css";
+import "../../pages/Landing/Landing/Landing.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const BgImage =
-  "https://www.nsbpictures.com/wp-content/uploads/2019/03/fire-heart.jpg";
+  "https://wallpapercave.com/wp/wp5561202.jpg";
 
 const PrivateImage =
   "https://tse4.mm.bing.net/th?id=OIP.blkH2IoD1_3huHun3emAYQHaFd&pid=Api&P=0";
@@ -39,6 +39,7 @@ const HomeImage = styled.img`
   width: 100%;
   background-color: red;
   margin-top: 0px;
+  border-radius: 5px;
 `;
 const HomeTitle = styled.h2`
   text-align: center;
@@ -48,12 +49,15 @@ const HomeTitle = styled.h2`
   left: 70px;
 `;
 const HomeDetails = styled.p`
-  font-weight: bolder;
   text-align: start;
-  padding: 20px;
   position: absolute;
   bottom: 100px;
   left: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: normal;
 `;
 
 const HomeButton = styled.button`
@@ -62,7 +66,19 @@ const HomeButton = styled.button`
   bottom: 50px;
   left: 15%;
   border: none;
-  background-color: white;
+  border-radius: 5px;
+  background-color: red;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  padding: 7px;
 `;
 
 const SmallNavContainer = styled.div`
@@ -71,13 +87,17 @@ const SmallNavContainer = styled.div`
   justify-content: center;
   width: 100%;
   align-itmes: center;
-  border-bottom: 3px solid #660042;
+  border-bottom: 3px solid tomato;
 `;
 const RecommendedLinks = styled.button`
-  font-size: 17px;
+  font-size: 20px;
   margin: 10px 15px;
   border: none;
-  background-color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: #ffffff;
+  background: transparent;
 `;
 const IntroContainer = styled.div`
   margin: 10px auto;
@@ -97,16 +117,22 @@ const IntroCards = styled.div`
 const IntroCardsTitle = styled.h2`
   text-align: center;
   font-weight: bolder;
+  color: #ffffff;
+  background: transparent;
+  text-shadow: 3px 5px 2px #474747;
 `;
 const IntroCardsDetails = styled.p`
   font-weight: bolder;
   text-align: start;
   padding: 20px;
+  color: #d9d9d9;
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
 `;
-const IntroVideo = styled.video`
-  width: 100%;
-  height: 235px;
-`;
+// const IntroVideo = styled.video`
+//   width: 100%;
+//   height: 235px;
+// `;
 
 const HowItWorksContainer = styled.h4`
   margin: 10px auto;
@@ -220,11 +246,11 @@ const FirstPage = () => {
       <GeneralContainer>
         <HomeContainer>
           <HomeImage src={BgImage} />
-          <HomeTitle>Meet Eritrean Singles</HomeTitle>
+          <HomeTitle>Find Your Life Partner</HomeTitle>
           <HomeDetails>
             Leading Eritrean Dating Site With Over 500K Members
           </HomeDetails>
-          <HomeButton>ስንግላት ረአ ሕጂ</HomeButton>
+          <HomeButton>View singles now</HomeButton>
         </HomeContainer>
         <SmallNavContainer>
           <RecommendedLinks>Women</RecommendedLinks>
@@ -233,34 +259,50 @@ const FirstPage = () => {
         </SmallNavContainer>
         <IntroContainer>
           <IntroCards>
-            <IntroCardsTitle>why choose Eri singles</IntroCardsTitle>
+            <IntroCardsTitle>why choose Eri Dating</IntroCardsTitle>
             <IntroCardsDetails>
-              With over 500 K singles available online, you have more chances of
-              meeting the Eritrean woman or man of your dreams on EriSingles
-              than anywhere else. Whether you are interested in finding someone
-              local or overseas, you can easily browse through 1000s of singles
-              to find the perfect partner for you. Sign up to EriSingles today,
-              your Eritrean romance is just a click away.just click{" "}
+              With over 500K singles available online, you have more chances of
+              meeting the Eritrean woman or man of your dreams on EriDating than
+              anywhere else. Whether you are interested in finding someone local
+              or overseas, you can easily browse through 1000s of singles to
+              find the perfect partner for you. Sign up to EriDating today, your
+              Eritrean romance is just a click away just click{" "}
               <Link to="/go-somewhere">here</Link> to sign up today with
-              erisignles
+              EriDating
             </IntroCardsDetails>
           </IntroCards>
           <IntroCards>
-            <IntroCardsTitle>why choose Eri singles</IntroCardsTitle>
+            <IntroCardsTitle>Premium Service – Eritrean Dating</IntroCardsTitle>
             <IntroCardsDetails>
-              With over 500 K singles available online, you have more chances of
-              meeting the Eritrean woman or man of your dreams on EriSingles
-              than anywhere else. Whether you are interested in finding someone
-              local or overseas, you can easily browse through 1000s of singles
-              to find the perfect partner for you. Sign up to EriSingles today,
-              your Eritrean romance is just a click away.just click{" "}
-              <Link to="/go-somewhere">here</Link> to sign up today with
-              erisignles
+              EriDating is part of the well-established Media network that
+              operates over 20 reputable niche dating sites. With a commitment
+              to connecting Eritrean singles worldwide, we bring Eritrea to you.
+              <p>
+                Not many other sites can promise to connect you with 1000s of
+                men and women from Eritrea. Whether you’re looking for love
+                locally or internationally, we are committed to helping you find
+                the perfect match, no matter where in the world they may be.
+                <p>
+                  For more info please click{" "}
+                  <Link to="/go-somewhere">here</Link>
+                </p>
+              </p>
             </IntroCardsDetails>
           </IntroCards>
           <IntroCards>
-            <IntroCardsTitle>Short Introduction</IntroCardsTitle>
-            <IntroVideo></IntroVideo>
+            <IntroCardsTitle>Start Your Success Story On</IntroCardsTitle>
+            {/* <IntroVideo></IntroVideo> */}
+            <IntroCardsDetails>
+              As the leading Eritrean dating site, we successfully bring
+              together singles from around the world. For over 2 years,
+              thousands of happy men and women have met their soul mates on
+              EriDating and have shared their stories with us. Check out the
+              many success stories
+              <p>
+                For a fun, safe and uniquely Eritrean dating experience,{" "}
+                <Link to="/go-somewhere"> join free today</Link>
+              </p>
+            </IntroCardsDetails>
           </IntroCards>
         </IntroContainer>
         <HeaderTitle>How It Works</HeaderTitle>

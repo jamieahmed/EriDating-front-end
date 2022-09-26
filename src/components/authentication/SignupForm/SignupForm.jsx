@@ -1,46 +1,46 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.module.css'
-import * as authService from '../../services/authService'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./SignupForm.module.css";
+import * as authService from "../../../services/authService";
 
-const SignupForm = props => {
-  const navigate = useNavigate()
+const SignupForm = (props) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    passwordConf: '',
-  })
-  const [photoData, setPhotoData] = useState({})
+    name: "",
+    email: "",
+    password: "",
+    passwordConf: "",
+  });
+  const [photoData, setPhotoData] = useState({});
 
-  const handleChange = e => {
-    props.updateMessage('')
+  const handleChange = (e) => {
+    props.updateMessage("");
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const handleChangePhoto = (evt) => {
-    setPhotoData({ photo: evt.target.files[0] })
-  }
+    setPhotoData({ photo: evt.target.files[0] });
+  };
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      await authService.signup(formData, photoData.photo)
-      props.handleSignupOrLogin()
-      navigate('/')
+      await authService.signup(formData, photoData.photo);
+      props.handleSignupOrLogin();
+      navigate("/");
     } catch (err) {
-      props.updateMessage(err.message)
+      props.updateMessage(err.message);
     }
-  }
+  };
 
-  const { name, email, password, passwordConf } = formData
+  const { name, email, password, passwordConf } = formData;
 
   const isFormInvalid = () => {
-    return !(name && email && password && password === passwordConf)
-  }
+    return !(name && email && password && password === passwordConf);
+  };
 
   return (
     <form
@@ -49,7 +49,9 @@ const SignupForm = props => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+        <label htmlFor="name" className={styles.label}>
+          Name
+        </label>
         <input
           type="text"
           autoComplete="off"
@@ -60,7 +62,9 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+        <label htmlFor="email" className={styles.label}>
+          Email
+        </label>
         <input
           type="text"
           autoComplete="off"
@@ -71,7 +75,9 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+        <label htmlFor="password" className={styles.label}>
+          Password
+        </label>
         <input
           type="password"
           autoComplete="off"
@@ -112,10 +118,12 @@ const SignupForm = props => {
         <Link to="/">
           <button>Cancel</button>
         </Link>
-        <p>if you have an account aready <Link to="/login">Log In</Link></p>
+        <p>
+          Have an account? <Link to="/login">Log in now</Link>
+        </p>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default SignupForm
+export default SignupForm;

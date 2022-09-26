@@ -17,7 +17,12 @@
     ;
 }
 
-#fadebutton{
+#fadebutton {
     text-decoration: none;
     background-color: transparent;
+}
+
+.profile-image {
+    height: 200px;
+    width: 200px;
 }
